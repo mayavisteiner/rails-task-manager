@@ -1,0 +1,14 @@
+<div class="container mt-5">
+  <div class="card p-3">
+    <h1 class="my-4 text-center">My tasks</h1>
+    <ul class="">
+      <% @tasks.each do |task| %>
+        <li style="list-style-type: none">
+          <%= task.completed ? "✔️" : "❌" %>
+          <%= link_to task.title, task_path(task) %>
+        </li>
+      <% end %>
+    </ul>
+    <%= link_to "+ Add a New task", new_task_path, class: "btn btn-primary mt-3" %>
+  </div>
+</div>
